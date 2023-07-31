@@ -1,0 +1,115 @@
+.ul-TrasactionsList{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 20px;
+    padding-top: 0px;
+    border-radius: 25px;
+    /* border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px; */
+    margin-top : 30px;
+    background-color: #ffffff;
+    margin-bottom: 0px;
+}
+
+
+
+.heading-list{
+    display: flex;
+    margin: 0px;
+    align-items: center;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-color: #e3e0d8;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    padding: 10px;
+    padding-left: 0px;
+}
+
+.all-items-list{
+    display: flex;
+    margin: 0px;
+    align-items: center;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-color: #e3e0d8;
+}
+
+.trasaction-name-container{
+    display: flex;
+    width: 400px;
+    align-items: center;
+}
+
+
+
+.teaxt-trasaction-name{
+    font-family: Sans-serif;
+    font-size: 16px;
+    color: #343C6A; 
+    font-weight: bold;
+}
+
+.icon-trasaction-name{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    color: #718EBF;
+}
+
+
+.Category-text{
+    font-family: Sans-serif;
+    font-size: 16px;
+    color: #343C6A;
+    width: 150px;  
+    font-weight: bold; 
+}
+
+
+.date-text{
+    font-family: Sans-serif;
+    font-size: 16px;
+    color: #343C6A;
+    width: 200px;   
+    font-weight: bold;
+}
+
+.amount-text{
+    font-family: Sans-serif;
+    font-size: 16px;
+    color: #343C6A;
+    width: 150px;   
+    font-weight: bold;
+}
+
+.edit-icon{
+    width: 20px;
+    height: 20px;
+    color: #2D60FF;
+    margin-right: 30px; 
+}
+
+.delete-icon{
+    width: 20px;
+    height: 20px;
+    color: #FE5C73;
+}
+
+.all-list-items-color{
+    color: #505887;
+    font-weight: normal;
+}
+.credit-color{
+    color: #16DBAA;
+    font-weight: normal;
+}
+
+.debit-color{
+    color: #FE5C73;
+    font-weight: normal;
+}

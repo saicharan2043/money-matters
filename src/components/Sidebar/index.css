@@ -1,0 +1,118 @@
+.sidebar{
+    height: 100vh;
+    width: 250px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-width: 0px;
+    border-right-width: 1px;
+    border-style: solid;
+    border-color: #e3e0d8;
+}
+
+.top-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.app-log{
+    height: 38px;
+    width: 180px;
+    margin-bottom: 35px;
+    align-self: center;
+    margin-left: 15px;
+}
+
+.ul-side-tab{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0px;
+}
+
+.list-of-side-tabs{
+    display: flex;
+    width: 100%;
+    justify-content: start;
+    align-items: center;
+    height: 45px;
+    margin-bottom: 10px;
+    padding-left: 40px;
+    
+}
+
+.active-tab{
+    border-width: 0px;
+    border-left-width: 5px;
+    border-style: solid;
+    border-color: #2D60FF;
+    padding-left: 32px;
+}
+
+.icon-tab{
+    height: 25px;
+    width: 25px;
+    margin-right: 20px;
+    color: #505887;
+}
+
+.text-tab{
+    font-family: Sans-serif;
+    font-size: 18px;
+    color: #505887; 
+}
+
+.profile-container-sidebar{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.profile-sidebar{
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+    margin-right: 20px;
+    align-self: center;
+}
+
+.name-email-container{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding: 0px;
+}
+
+.name-logout-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.name{
+    font-family: Sans-serif;
+    font-size: 14px;
+    color: #505887;
+    margin: 0px;
+}
+
+.logout-icon{
+    height: 20px;
+    width: 20px;
+    color: #505887;
+}
+
+.email-text{
+    font-family: Sans-serif;
+    font-size: 14px;
+    color: #718EBF;
+    margin: 0px;
+}
+.link{
+    text-decoration: none;
+}

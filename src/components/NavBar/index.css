@@ -1,0 +1,63 @@
+.navbar-bg{
+    width: 100%;
+    min-height: 84px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: sticky;
+    top: 0;
+}
+
+.container-of-title-btn{
+    display: flex ;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.title-of-nav{
+    font-family: Sans-serif;
+    font-size: 28px;
+    color: #343C6A;
+}
+
+.container-of-btn{
+    width: 166px;
+    height: 36px;
+    border-radius: 12px;
+    background-color: #2D60FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-of-btn{
+    width: 15px;
+    height: 15px;
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+.text-of-btn{
+    font-family: Sans-serif;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.ul-of-nav{
+    display: flex;
+    margin-top: 0px;
+    width: 500px;
+    padding: 0px;
+}
+
+.list-of-nav{
+    font-family: Sans-serif;
+    font-size: 16px;
+    color: #718EBF;
+    margin-right: 40px;
+    list-style: none;
+}

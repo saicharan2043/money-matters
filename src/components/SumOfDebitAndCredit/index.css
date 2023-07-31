@@ -1,0 +1,65 @@
+.debit-and-credit-container{
+     display: flex;
+     width: 90%;
+     margin-bottom: 15px;
+     padding: 0px;
+     justify-content: space-between;
+     align-items: center;
+     margin-top: 30px;
+}
+
+.credit-container{
+    width: 543px;
+    height: 169px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 25px;
+    background-color: #ffffff;
+    margin-right: 25px;
+    padding: 10px;
+    
+}
+
+.money-and-credit-container{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    margin-left: 15px;
+}
+
+.money-of-credit{
+    font-size: 32px;
+    color: #16DBAA;
+    font-family: Sans-serif;
+    margin-bottom: 0px;
+}
+
+.text-of-credit{
+    font-size: 16px;
+    color: #718EBF;
+    font-family: Sans-serif;
+    margin-top: 5px;
+}
+
+.image-credit{
+    width: 182px;
+    height: 160px;
+}
+
+.debit-container{
+    width: 543px;
+    height: 169px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 25px;
+    background-color: #ffffff;
+    padding: 10px;
+    
+}
+
+.money-of-debit{
+    font-size: 32px;
+    color: #FE5C73;
+    font-family: Sans-serif;
+    margin-bottom: 0px;
+}
