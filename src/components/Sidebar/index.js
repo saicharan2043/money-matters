@@ -6,17 +6,19 @@ import {CgProfile} from "react-icons/cg"
 import {MdOutlineLogout} from "react-icons/md"
 import AllContext from "../../context/AllContext"
 import "./index.css"
-import { Link } from "react-router-dom"
+import { Link , withRouter} from "react-router-dom"
 import Cookies from "js-cookie"
+import Popup from 'reactjs-popup'
 // const sidBarTabs = [
 //     {id : 1 , title : "Dashboard", icon : "AiFillHome"} ,
 //     {id : 2 , title : "Trasactions", icon : "FaMoneyBillTransfer"},
 //     {id : 3 , title : "Profile", icon : "CgProfile"}
 // ]
 
-const SideBar = () =>{
+const SideBar = (props) =>{
 
     const [profileDetails , setProfileDetails] = useState({})
+    const [isLogoutTrue , setLogoutTrue] = useState(false)
 
     useEffect(()=>{
         getProfileData()
@@ -38,6 +40,7 @@ const SideBar = () =>{
         const data = await response.json()
         setProfileDetails(data.users[0])
     }
+    const id = Cookies.get("user_id")
 
     // const getIcons = (expression) =>{
     //     switch (expression) {
@@ -53,6 +56,12 @@ const SideBar = () =>{
     //     }
     // }
 
+    const logout = () =>{
+        setLogoutTrue(true)
+        // const {history} = props
+        // Cookies.remove("user_id")
+        // history.replace("/login")
+    }
 
 
     return(
@@ -63,13 +72,14 @@ const SideBar = () =>{
 
                 // }
                 return(
+                    <>
                     <nav className="sidebar">
                         <div className="top-container">
                             <Link to="/userdashboard" className="link">
                                 <img src="https://res.cloudinary.com/dufhgcfh6/image/upload/v1690714704/Frame_507_xhhorp.png" className="app-log"/>
                             </Link>
                             <ul className="ul-side-tab">
-                                <Link to="/userdashboard" className="link">
+                                <Link to={id === 3 ? "/admindashboard" : "/userdashboard"} className="link">
                                     <li className={`list-of-side-tabs`} >
                                         <AiFillHome className="icon-tab"/>
                                         <p className="text-tab">Dashboard</p>
@@ -78,7 +88,12 @@ const SideBar = () =>{
                                 <Link to="/trasactions" className="link">
                                     <li className={`list-of-side-tabs`}>
                                         <FaMoneyBillTransfer className="icon-tab"/>
-                                        <p className="text-tab">Trasactions</p>
+                                        {id === "3" ? (
+                                            <p className="text-tab">All Trasactions</p>
+                                        ) : (
+                                            <p className="text-tab">Trasactions</p>
+                                        )}
+                                        
                                     </li>
                                 </Link>
                                 <Link to="/ProfileTab" className="link">
@@ -94,12 +109,44 @@ const SideBar = () =>{
                                 <div className="name-email-container">
                                     <div className="name-logout-container">
                                         <p className="name">{profileDetails.name}</p>
-                                        <MdOutlineLogout className="logout-icon"/>
+                                        <Popup
+                                            modal
+                                            trigger={
+                                                <MdOutlineLogout className="logout-icon"/>
+                                            }
+                                            className="popup-content"
+                                        >
+                                            {close => (
+                                            <div className="PopupContainer">
+                                                <p className="HeadingPopup">
+                                                Are you sure, you want to logout
+                                                </p>
+                                                <div className="ButtonsContainer">
+                                                <button
+                                                    type="button"
+                                                    onClick={() => close()}
+                                                    className="ButtonPopup"
+                                                >
+                                                    Cancel
+                                                </button>
+                                                <button
+                                                    onClick={logout}
+                                                    type="button"
+                                                    className="ButtonConfirm"
+                                                >
+                                                    Confirm
+                                                </button>
+                                                </div>
+                                            </div>
+                                            )}
+                                        </Popup>
+                                        
                                     </div>
                                     <p className="email-text">{profileDetails.email}</p>
                                 </div>
                             </div>
                     </nav>
+                    </>
                 )
             }}
         </AllContext.Consumer>
@@ -107,4 +154,4 @@ const SideBar = () =>{
     
 }
 
-export default SideBar
+export default withRouter(SideBar)

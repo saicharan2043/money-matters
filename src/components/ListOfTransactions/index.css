@@ -1,4 +1,4 @@
-.ul-TrasactionsList{
+.ul-transactionsList{
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -39,7 +39,7 @@
     border-color: #e3e0d8;
 }
 
-.trasaction-name-container{
+.transaction-name-container{
     display: flex;
     width: 400px;
     align-items: center;
@@ -47,14 +47,23 @@
 
 
 
-.teaxt-trasaction-name{
+.teaxt-transaction-name{
     font-family: Sans-serif;
     font-size: 16px;
     color: #343C6A; 
     font-weight: bold;
 }
 
-.icon-trasaction-name{
+.profile-list-transaction{
+    height: 30px;
+    width: 30px;
+    border-radius: 100px;
+    margin-right: 8px;
+    margin-left: 10px;
+    align-self: center;
+}
+
+.icon-transaction-name{
     width: 30px;
     height: 30px;
     margin-right: 10px;

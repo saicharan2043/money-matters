@@ -17,7 +17,7 @@ const positionOfDisplay = {
     loading: 'LOADING',
   }
 
-class UserDashboard extends Component{
+class AdminDashboard extends Component{
 
     state = {sumOfDebit : "0"  , sumOfcredit : "0" , LastTransactionList : [] , barChartList : [],statusOfDisplay: positionOfDisplay.loading}
 
@@ -40,7 +40,6 @@ class UserDashboard extends Component{
         }
         const response = await fetch(url , options)
         const data = await response.json()
-        
         const updatedData = data.transactions.map((echValue) =>{
             const currentDate = new Date(echValue.date)
             const displayAMAndPM = currentDate.getHours() > 12 ? "PM" : "AM"
@@ -50,6 +49,8 @@ class UserDashboard extends Component{
                 + currentDate.getMinutes() + " " + displayAMAndPM;
                 return {...echValue , date : fullDateAndTime}
         })
+        
+        
         this.setState({LastTransactionList : updatedData})
     }
 
@@ -57,14 +58,13 @@ class UserDashboard extends Component{
     getDebitAndCredit = async() =>{
         this.setState({statusOfDisplay: positionOfDisplay.loading})
         const id = Cookies.get("user_id")
-        const url = `https://bursting-gelding-24.hasura.app/api/rest/credit-debit-totals`
+        const url = `https://bursting-gelding-24.hasura.app/api/rest/transaction-totals-admin`
         const options= {
             method : "GET" ,
             headers : {
                 "Content-Type" : "application/json" ,
                 "x-hasura-admin-secret" :"g08A3qQy00y8yFDq3y6N1ZQnhOPOa4msdie5EtKS1hFStar01JzPKrtKEzYY2BtF" ,
-                "x-hasura-role" : "user" ,
-                "x-hasura-user-id" : id
+                "x-hasura-role" : "admin"
             } 
         }
         const response = await fetch(url , options)
@@ -103,7 +103,7 @@ class UserDashboard extends Component{
                             <>
                                 <SumOfDebitAndCredit sumOfDebit={sumOfDebit} sumOfcredit={sumOfcredit}/>
                                 <h1 className="Last-Trasaction-text">Last Trasaction</h1>
-                                <ListOfTrasactions title="Dashboard" TransactionsList={LastTransactionList}/>
+                                <ListOfTrasactions title="Dashboard" TrasactionsList={LastTransactionList}/>
                             </>
                         ) :(
                             this.InProccesing()
@@ -116,4 +116,4 @@ class UserDashboard extends Component{
     }
 }
 
-export default UserDashboard
+export default AdminDashboard

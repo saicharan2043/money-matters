@@ -3,15 +3,18 @@ import {MdOutlineModeEditOutline} from "react-icons/md"
 import {RiDeleteBinLine} from "react-icons/ri"
 
 import "./index.css"
+import Cookies from "js-cookie"
 
-const ListOfTrasactions = (props) =>{
-    const {TrasactionsList , title} = props
+const ListOfTransactions = (props) =>{
+    const {TransactionsList , title} = props
+    console.log(TransactionsList)
+    const id = Cookies.get("user_id")
     return(
-        <ul className="ul-TrasactionsList">
+        <ul className="ul-transactionsList">
             {title === undefined && (
                 <li className="heading-list">
-                    <div className="trasaction-name-container">
-                        <p className="teaxt-trasaction-name">Trasaction Name</p>
+                    <div className="transaction-name-container">
+                        <p className="teaxt-transaction-name">Trasaction Name</p>
                     </div>
                     <p className="Category-text">Category</p>
                     <p className="date-text">Date</p>
@@ -19,16 +22,16 @@ const ListOfTrasactions = (props) =>{
                 </li>
             )}
             
-            {TrasactionsList.map((echValue) =>(
+            {TransactionsList.map((echValue) =>(
                 <li className="all-items-list">
-                    <div className="trasaction-name-container">
+                    <div className="transaction-name-container">
                         {echValue.type === "debit" ? (
-                            <BiDownArrowCircle className={`icon-trasaction-name ${title !== undefined && "debit-color"}`}/>
+                            <BiDownArrowCircle className={`icon-transaction-name ${title !== undefined && "debit-color"}`}/>
                         ) : (
-                            <BiUpArrowCircle className={`icon-trasaction-name ${title !== undefined && "credit-color"}`}/>
+                            <BiUpArrowCircle className={`icon-transaction-name ${title !== undefined && "credit-color"}`}/>
                         )}
-                        
-                        <p className="teaxt-trasaction-name all-list-items-color">{echValue.transaction_name}</p>
+                        {id === "3" && <img src="https://image.winudf.com/v2/image1/bmV0LndsbHBwci5ib3lzX3Byb2ZpbGVfcGljdHVyZXNfc2NyZWVuXzBfMTY2NzUzNzYxN18wOTk/screen-0.webp?fakeurl=1&type=.webp" className="profile-list-transaction"/>}
+                        <p className="teaxt-transaction-name all-list-items-color">{echValue.transaction_name}</p>
                     </div>
                     <p className="Category-text all-list-items-color">{echValue.category}</p>
                     <p className="date-text all-list-items-color">{echValue.date}</p>
@@ -41,4 +44,4 @@ const ListOfTrasactions = (props) =>{
     )
 }
 
-export default ListOfTrasactions
+export default ListOfTransactions

@@ -2,22 +2,23 @@ import { Component } from 'react';
 import {Switch , Route} from "react-router-dom"
 import Login from './components/LoginPage';
 import UserDashboard from './components/UserDashboard';
-import Trasactions from "./components/Trasactions"
+import Transactions from "./components/Transactions"
 import ProfileTab from './components/ProfileTab/inde';
 import AllContext from './context/AllContext';
 import ProtectedRouter from './ProtectedRouter';
+import AdminDashboard from './components/AdminDashboard';
 
 import './App.css';
 
 class App extends Component {
-  state = {sideBarActiveId : 1, navBarActtiveId : 1}
+  state = {sideBarActiveId : 1, navBarActtiveId : {id : 1 , name : "All Transactions"}}
 
   clickSideBarTab = (id) =>{
     this.setState({sideBarActiveId : id})
   }
 
-  clickNavBarTab = (id) =>{
-    this.setState({navBarActtiveId : id})
+  clickNavBarTab = (value) =>{
+    this.setState({navBarActtiveId : {id : value.id , name : value.name}})
   }
 
   render(){
@@ -33,8 +34,9 @@ class App extends Component {
         <Switch>
           <Route exact path="/login" component={Login}/>
           <ProtectedRouter exact path="/userdashboard" component={UserDashboard}/>
-          <ProtectedRouter exact path="/trasactions" component={Trasactions}/>
+          <ProtectedRouter exact path="/trasactions" component={Transactions}/>
           <ProtectedRouter exact path="/ProfileTab" component={ProfileTab}/>
+          <ProtectedRouter exact path="/admindashboard" component={AdminDashboard}/>
         </Switch>
       </AllContext.Provider>
     )

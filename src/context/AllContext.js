@@ -3,7 +3,7 @@ import React from "react"
 const AllContext = React.createContext({
     sideBarActiveId : 1 ,
     clickSideBarTab : () =>{} ,
-    navBarActtiveId : 1,
+    navBarActtiveId : {id : 1 , name : "All Transactions"},
     clickNavBarTab : () =>{}
 })
 
