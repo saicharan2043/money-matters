@@ -8,12 +8,12 @@ import {BallTriangle} from 'react-loader-spinner'
 import "./index.css"
 import SumOfDebitAndCredit from "../SumOfDebitAndCredit";
 import Cookies from "js-cookie";
+import BarCharts from "../BarChart";
 
 
 
 const positionOfDisplay = {
     success: 'SUCCESS',
-    failure: 'FAILURE',
     loading: 'LOADING',
   }
 
@@ -104,6 +104,8 @@ class UserDashboard extends Component{
                                 <SumOfDebitAndCredit sumOfDebit={sumOfDebit} sumOfcredit={sumOfcredit}/>
                                 <h1 className="Last-Trasaction-text">Last Trasaction</h1>
                                 <ListOfTrasactions title="Dashboard" TransactionsList={LastTransactionList}/>
+                                <h1 className="barchart-text">Debit & Credit Overview</h1>
+                                <BarCharts/>
                             </>
                         ) :(
                             this.InProccesing()

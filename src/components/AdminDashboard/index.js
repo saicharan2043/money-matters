@@ -8,12 +8,11 @@ import {BallTriangle} from 'react-loader-spinner'
 import "./index.css"
 import SumOfDebitAndCredit from "../SumOfDebitAndCredit";
 import Cookies from "js-cookie";
-
+import BarCharts from "../BarChart";
 
 
 const positionOfDisplay = {
     success: 'SUCCESS',
-    failure: 'FAILURE',
     loading: 'LOADING',
   }
 
@@ -57,7 +56,6 @@ class AdminDashboard extends Component{
 
     getDebitAndCredit = async() =>{
         this.setState({statusOfDisplay: positionOfDisplay.loading})
-        const id = Cookies.get("user_id")
         const url = `https://bursting-gelding-24.hasura.app/api/rest/transaction-totals-admin`
         const options= {
             method : "GET" ,
@@ -69,8 +67,8 @@ class AdminDashboard extends Component{
         }
         const response = await fetch(url , options)
         const data = await response.json()
-        if(data.totals_credit_debit_transactions.length !== 0){
-            data.totals_credit_debit_transactions.forEach((echValue) =>{
+        if(data.transaction_totals_admin.length !== 0){
+            data.transaction_totals_admin.forEach((echValue) =>{
                 if(echValue.type === "debit"){
                     this.setState({sumOfDebit : echValue.sum})
                 }else if(echValue.type === "credit"){
@@ -103,7 +101,9 @@ class AdminDashboard extends Component{
                             <>
                                 <SumOfDebitAndCredit sumOfDebit={sumOfDebit} sumOfcredit={sumOfcredit}/>
                                 <h1 className="Last-Trasaction-text">Last Trasaction</h1>
-                                <ListOfTrasactions title="Dashboard" TrasactionsList={LastTransactionList}/>
+                                <ListOfTrasactions title="Dashboard" TransactionsList={LastTransactionList}/>
+                                <h1 className="barchart-text">Debit & Credit Overview</h1>
+                                <BarCharts/>
                             </>
                         ) :(
                             this.InProccesing()

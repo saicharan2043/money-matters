@@ -18,7 +18,6 @@ const TransactionsTabs = [
 
 const positionOfDisplay = {
     success: 'SUCCESS',
-    failure: 'FAILURE',
     loading: 'LOADING',
   }
 

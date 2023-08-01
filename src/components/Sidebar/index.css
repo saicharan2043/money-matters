@@ -148,17 +148,53 @@
   height: 200px;
   width: 500px;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   border-radius: 10px;
   padding: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
   
 }
+
+.popup-icon{
+    width: 32px;
+    height: 32px;
+    margin-right: 0px;
+    align-self: flex-start;
+    margin-top: 40px;
+}
+
+.right-container-of-popup{
+    display: flex;
+    flex-direction: column;
+}
+
+.cancel-icon-container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.cancel-icon{
+    width: 24px;
+    height: 24px;
+}
+
+.paragraph-popup{
+    font-family: Sans-serif;
+    font-size: 14px;
+    color: #505887;
+    margin-bottom: 25px;
+    
+}
+
 .HeadingPopup{
-  font-family: Roboto;
-  font-size: 25px;
-  color: '#ffffff';
-  margin-bottom: 50px;
+  font-family: Sans-serif;
+  font-size: 20px;
+  color: '#333B69';
+  margin-bottom: 0px;
+  margin-right: 15px;
 }
 
 .ButtonsContainer{
@@ -168,18 +204,19 @@
 .ButtonPopup{
   width: 100px;
   height: 45px;
-  border: 1px solid '#ffffff';
-  border-radius: 5px;
+  border-width: 0px;
+  border-radius: 8px;
   display: flex;
-  background-color: transparent;
+  background-color: #DC2626;
   justify-content: center;
   align-items: center;
-  font-family: Roboto;
+  font-family: Sans-serif;
   font-size: 15px;
-  color: '#ffffff';
+  color: #ffffff;
   margin-right: 40px;
   font-weight: 500;
   cursor: pointer;
+  outline: none;
   
   
 }
@@ -187,15 +224,15 @@
 .ButtonConfirm{
   width: 100px;
   height: 45px;
-  border-width: 0px;
-  border-radius: 5px;
+  border:1px solid gray;
+  border-radius: 8px;
   display: flex;
-  background-color: #3b82f6;
+  background-color: transparent;
   justify-content: center;
   align-items: center;
   font-family: Roboto;
   font-size: 15px;
-  color: #ffffff;
+  color: #000000;
   margin-right: 40px;
   font-weight: 500;
   cursor: pointer;

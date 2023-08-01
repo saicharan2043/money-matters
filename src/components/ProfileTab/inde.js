@@ -21,7 +21,6 @@ const ProfileCode = (props) =>{
 
 const positionOfDisplay = {
     success: 'SUCCESS',
-    failure: 'FAILURE',
     loading: 'LOADING',
   }
 

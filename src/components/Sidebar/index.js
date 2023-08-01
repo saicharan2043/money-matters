@@ -4,6 +4,8 @@ import {AiFillHome} from "react-icons/ai"
 import {FaMoneyBillTransfer} from "react-icons/fa6"
 import {CgProfile} from "react-icons/cg"
 import {MdOutlineLogout} from "react-icons/md"
+import {GrFormClose} from "react-icons/gr"
+import {LuLogOut} from "react-icons/lu"
 import AllContext from "../../context/AllContext"
 import "./index.css"
 import { Link , withRouter} from "react-router-dom"
@@ -57,10 +59,9 @@ const SideBar = (props) =>{
     // }
 
     const logout = () =>{
-        setLogoutTrue(true)
-        // const {history} = props
-        // Cookies.remove("user_id")
-        // history.replace("/login")
+        const {history} = props
+        Cookies.remove("user_id")
+        history.replace("/login")
     }
 
 
@@ -75,11 +76,11 @@ const SideBar = (props) =>{
                     <>
                     <nav className="sidebar">
                         <div className="top-container">
-                            <Link to="/userdashboard" className="link">
+                            <Link to={id === "3" ? "/admindashboard" : "/userdashboard"} className="link">
                                 <img src="https://res.cloudinary.com/dufhgcfh6/image/upload/v1690714704/Frame_507_xhhorp.png" className="app-log"/>
                             </Link>
                             <ul className="ul-side-tab">
-                                <Link to={id === 3 ? "/admindashboard" : "/userdashboard"} className="link">
+                                <Link to={id === "3" ? "/admindashboard" : "/userdashboard"} className="link">
                                     <li className={`list-of-side-tabs`} >
                                         <AiFillHome className="icon-tab"/>
                                         <p className="text-tab">Dashboard</p>
@@ -118,24 +119,31 @@ const SideBar = (props) =>{
                                         >
                                             {close => (
                                             <div className="PopupContainer">
-                                                <p className="HeadingPopup">
-                                                Are you sure, you want to logout
-                                                </p>
-                                                <div className="ButtonsContainer">
-                                                <button
-                                                    type="button"
-                                                    onClick={() => close()}
-                                                    className="ButtonPopup"
-                                                >
-                                                    Cancel
-                                                </button>
-                                                <button
-                                                    onClick={logout}
-                                                    type="button"
-                                                    className="ButtonConfirm"
-                                                >
-                                                    Confirm
-                                                </button>
+                                                <LuLogOut className="popup-icon" onClick={() => close()}/>
+                                                <div className="right-container-of-popup">
+                                                    <div className="cancel-icon-container">
+                                                        <h1 className="HeadingPopup">
+                                                        Are you sure, you want to logout
+                                                        </h1>
+                                                        <GrFormClose className="cancel-icon"/>
+                                                    </div>
+                                                    <p className="paragraph-popup">Lorem ipsum dolor sit amet, constectetur adipiscing elit, sed</p>
+                                                    <div className="ButtonsContainer">
+                                                        <button
+                                                            type="button"
+                                                            onClick={logout}
+                                                            className="ButtonPopup"
+                                                        >
+                                                            Yes, Logout
+                                                        </button>
+                                                        <button
+                                                            onClick={() => close()}
+                                                            type="button"
+                                                            className="ButtonConfirm"
+                                                        >
+                                                            Cancel
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
                                             )}

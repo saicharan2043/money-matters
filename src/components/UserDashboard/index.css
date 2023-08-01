@@ -32,3 +32,13 @@
     margin-bottom: 0px;
     margin-left: 60px;
   }
+
+.barchart-text{
+    font-family: Sans-serif;
+    font-size: 22px;
+    color: #333B69;
+    align-self: flex-start;
+    margin-bottom: 50px;
+    margin-left: 60px;
+    margin-top: 30px;
+}
