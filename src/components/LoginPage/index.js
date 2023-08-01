@@ -34,7 +34,8 @@ class Login extends Component{
         if(data.get_user_id.length !== 0){
             const {id} = data.get_user_id[0]
             Cookies.set("user_id" , JSON.stringify(id))
-            history.replace("/userdashboard")
+            {id === 3 ? history.replace("/admindashboard"):history.replace("/userdashboard")}
+            
         }
         else{
             this.setState({ErrorMsg : "Please Enter valid details"})
@@ -44,7 +45,6 @@ class Login extends Component{
     }
 
     clickLoginBtn = (event) =>{
-        console.log("hello")
         event.preventDefault()
         const {username , password} = this.state
         if (username === ""){
@@ -70,7 +70,7 @@ class Login extends Component{
         const {username , password , ErrorMsg} = this.state
         const id = Cookies.get("user_id")
         if(id !== undefined){
-            return <Redirect to="/userdashboard"/>
+            return id === "3" ? <Redirect to="/admindashboard"/> : <Redirect to="/userdashboard"/> 
         }
         return(
             <div className="first-container">

@@ -24,6 +24,7 @@ class UserDashboard extends Component{
     componentDidMount(){
         this.getDebitAndCredit()
         this.getLastTransaction()
+        
     }
 
     getLastTransaction = async() =>{
@@ -50,7 +51,7 @@ class UserDashboard extends Component{
                 + currentDate.getMinutes() + " " + displayAMAndPM;
                 return {...echValue , date : fullDateAndTime}
         })
-        this.setState({LastTransactionList : updatedData})
+        this.setState({LastTransactionList : updatedData , statusOfDisplay: positionOfDisplay.success})
     }
 
 
@@ -77,9 +78,9 @@ class UserDashboard extends Component{
                     this.setState({ sumOfcredit : echValue.sum })
                 }
             })
-            this.setState({statusOfDisplay: positionOfDisplay.success})
+            
         }else{
-            this.setState({sumOfDebit : "0" , sumOfcredit : "0" ,  statusOfDisplay: positionOfDisplay.success})
+            this.setState({sumOfDebit : "0" , sumOfcredit : "0"})
         }
         
 

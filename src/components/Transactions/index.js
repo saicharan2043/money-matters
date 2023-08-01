@@ -45,7 +45,6 @@ class Transactions extends Component{
         }
         const response = await fetch(url , options)
         const data = await response.json()
-        
         this.setState({TransactionsList : data.transactions , statusOfDisplay: positionOfDisplay.success})
 
     }

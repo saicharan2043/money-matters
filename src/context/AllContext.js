@@ -4,7 +4,9 @@ const AllContext = React.createContext({
     sideBarActiveId : 1 ,
     clickSideBarTab : () =>{} ,
     navBarActtiveId : {id : 1 , name : "All Transactions"},
-    clickNavBarTab : () =>{}
+    clickNavBarTab : () =>{},
+    deleteId : "" ,
+    deleteBtnClick : () =>{}
 })
 
 export default AllContext

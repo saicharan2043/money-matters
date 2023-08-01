@@ -2,8 +2,6 @@ import "./index.css"
 
 const SumOfDebitAndCredit = (props) =>{
     const {sumOfDebit , sumOfcredit} = props
-    console.log(sumOfcredit)
-    console.log(sumOfDebit)
     return(
         <div className="debit-and-credit-container">
             <div className="credit-container">

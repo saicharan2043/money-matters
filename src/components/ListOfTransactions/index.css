@@ -101,12 +101,14 @@
     height: 20px;
     color: #2D60FF;
     margin-right: 30px; 
+    cursor: pointer;
 }
 
 .delete-icon{
     width: 20px;
     height: 20px;
     color: #FE5C73;
+    cursor: pointer;
 }
 
 .all-list-items-color{
@@ -121,4 +123,110 @@
 .debit-color{
     color: #FE5C73;
     font-weight: normal;
+}
+
+
+.popup-content{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0c0e11;
+    opacity: 0.9;
+}
+
+.PopupContainer-transactions{
+  background-color: #ffffff;
+  height: 200px;
+  width: 570px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  
+}
+
+.popup-icon{
+    width: 32px;
+    height: 32px;
+    margin-right: 0px;
+    align-self: flex-start;
+    margin-top: 40px;
+}
+
+.right-container-of-popup{
+    display: flex;
+    flex-direction: column;
+}
+
+.cancel-icon-container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.cancel-icon{
+    width: 24px;
+    height: 24px;
+}
+
+.paragraph-popup{
+    font-family: Sans-serif;
+    font-size: 14px;
+    color: #505887;
+    margin-bottom: 25px;
+    
+}
+
+.HeadingPopup{
+  font-family: Sans-serif;
+  font-size: 20px;
+  color: '#333B69';
+  margin-bottom: 0px;
+  margin-right: 15px;
+}
+
+.ButtonsContainer{
+  display: flex;
+}
+
+.ButtonPopup{
+  width: 100px;
+  height: 36px;
+  border-width: 0px;
+  border-radius: 8px;
+  display: flex;
+  background-color: #DC2626;
+  justify-content: center;
+  align-items: center;
+  font-family: Sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  margin-right: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  
+  
+}
+
+.ButtonConfirm{
+  width: 100px;
+  height: 36px;
+  border:1px solid gray;
+  border-radius: 8px;
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  font-family: Sans-serif;
+  font-size: 14px;
+  color: #000000;
+  margin-right: 40px;
+  font-weight: bold;
+  cursor: pointer;
 }

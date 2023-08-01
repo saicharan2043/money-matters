@@ -1,0 +1,56 @@
+.not-found-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+  }
+  
+ 
+  
+  .img-notfound {
+    width: 200px;
+    height: 250px;
+    margin-bottom: 48px;
+  }
+  
+  .text-notfound {
+    font-family: Sans-serif;
+    font-size: 45px;
+    text-align: center;
+    color: #262626;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  
+  
+  
+  .discription-notfound {
+    font-family: Sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: #989898;
+    font-weight: 400;
+    margin-bottom: 32px;
+    line-height: 32px;
+  }
+  
+  .button-notfound {
+    width: 150px;
+    height: 50px;
+    background-color: #4094ef;
+    border-radius: 12px;
+    font-family: Sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 0px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  
